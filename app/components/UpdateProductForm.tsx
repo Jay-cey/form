@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Button, Checkbox, TextField, Typography, FormControlLabel, Alert } from '@mui/material';
 import { SelectChangeEvent } from '@mui/material';
 import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
@@ -28,7 +28,7 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
   const router = useRouter();
   // const params = useParams(); 
   // const id = params?.id as string | undefined;
-  const id = productId;
+  // const id = productId;
 
   // Form data state
   const [formData, setFormData] = useState<FormData>({
@@ -46,7 +46,7 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
   });
 
   // Dropdown options state
-  const [dropdownOptions, setDropdownOptions] = useState({
+  const [ dropdownOptions ] = useState({
     categories: ['Category A', 'Category B', 'Category C'],
     subcategories: ['Subcategory X', 'Subcategory Y', 'Subcategory Z'],
     taxCodes: ['Tax Code 1', 'Tax Code 2', 'Tax Code 3'],
