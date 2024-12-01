@@ -93,13 +93,28 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
   
 
   // Handle form input changes
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement> | SelectChangeEvent<string>
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prev => ({ 
+  //     ...prev, 
+  //     [name]: value 
+  //   }));
+  // };
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement> | SelectChangeEvent<string>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>
   ) => {
     const { name, value } = e.target;
     setFormData(prev => ({ 
       ...prev, 
-      [name]: value 
+      [name]: 
+        name === 'productPrice' || 
+        name === 'productQuantity' || 
+        name === 'productVAT' 
+          ? Number(value) 
+          : value 
     }));
   };
 

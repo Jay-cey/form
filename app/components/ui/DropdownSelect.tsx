@@ -6,22 +6,29 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 interface DropdownSelectProps {
   label: string;
+  name?: string;
   value: string;
   options?: string[];
   onChange: (event: SelectChangeEvent<string>) => void;
+  fullWidth?: boolean;
+  margin?: string;
 }
 
 const DropdownSelect: React.FC<DropdownSelectProps> = ({
   label,
+  name,
   value,
   options = [],
   onChange,
+  fullWidth = true,
+  margin = 'normal',
 }) => {
   return (
     <FormControl fullWidth>
       <InputLabel id={`${label}-label`}>{label}</InputLabel>
       <Select
         labelId={`${label}-label`}
+        name={name}
         id={label}
         value={value || ''}
         onChange={onChange}
