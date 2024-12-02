@@ -202,8 +202,13 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
           label="Product Price"
           name="productPrice"
           type="number"
-          value={formData.productPrice}
-          onChange={handleChange}
+          // value={formData.productPrice}
+          // onChange={handleChange}
+          value={formData.productPrice === 0 ? '' : formData.productPrice}
+          onChange={(e) => {
+            const value = e.target.value === '' ? 0 : Number(e.target.value);
+            setFormData(prev => ({ ...prev, productPrice: value }));
+          }}
           fullWidth
           margin="normal"
         />
@@ -211,8 +216,13 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
           label="Product Quantity"
           name="productQuantity"
           type="number"
-          value={formData.productQuantity}
-          onChange={handleChange}
+          // value={formData.productQuantity}
+          // onChange={handleChange}
+          value={formData.productQuantity === 0 ? '' : formData.productQuantity}
+          onChange={(e) => {
+            const value = e.target.value === '' ? 0 : Number(e.target.value);
+            setFormData(prev => ({ ...prev, productQuantity: value }));
+          }}
           fullWidth
           margin="normal"
         />
@@ -257,8 +267,13 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
           label="Product VAT (%)"
           name="productVAT"
           type="number"
-          value={formData.productVAT}
-          onChange={handleChange}
+          // value={formData.productVAT}
+          // onChange={handleChange}
+          value={formData.productVAT === 0 ? '' : formData.productVAT}
+          onChange={(e) => {
+            const value = e.target.value === '' ? 0 : Number(e.target.value);
+            setFormData(prev => ({ ...prev, productVAT: value }));
+          }}
           fullWidth
           margin="normal"
         />
