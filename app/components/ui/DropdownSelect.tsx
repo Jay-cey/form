@@ -20,8 +20,6 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
   value,
   options = [],
   onChange,
-  fullWidth = true,
-  margin = 'normal',
 }) => {
   return (
     <FormControl fullWidth>
