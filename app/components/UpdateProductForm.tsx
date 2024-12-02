@@ -164,7 +164,7 @@ const UpdateProductForm = ({ productId }: UpdateProductFormProps) => {
   }
 
   return (
-    <div className='grid justify-items-center w-screen'>
+    <div className='grid justify-items-center w-screen py-8 lg:py-0'>
       <Typography variant="h4" gutterBottom>
         {productId ? 'Update Existing Product' : 'Create New Product'}
       </Typography>
